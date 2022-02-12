@@ -57,4 +57,4 @@ pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nano dh
 echo 'Настройка системы'
 genfstab -U /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt sh -c
+arch-chroot /mnt sh -c "$(curl -fsSL bit.ly/3rH9EM7)"
