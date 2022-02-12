@@ -6,7 +6,19 @@ setfont cyr-sun16
 echo 'Синхронизация системных часов'
 timedatectl set-ntp true
 
-e
+echo 'Создание разделов'
+(
+  echo o;
+
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +1024M;
+
+  echo n;
+  echo;
+  echo;
   echo;
   echo +45G;
 
