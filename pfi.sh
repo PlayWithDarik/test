@@ -14,28 +14,27 @@ echo 'Создание разделов'
   echo;
   echo;
   echo;
-  echo +4096M;
+  echo +105G;
 
   echo n;
   echo;
   echo;
-  echo;
+  echo +4096M;
   echo a;
-  echo 2;
+  echo 1;
 
   echo w;
 ) | fdisk /dev/sda
-
 echo 'Ваша разметка диска'
 fdisk -l
 
 echo 'Форматирование дисков'
-mkswap /dev/sda1
-mkfs.ext4 /dev/sda2
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda1
 
 echo 'Монтирование дисков'
-mount /dev/sda2 /mnt
-swapon /dev/sda1
+mount /dev/sda1 /mnt
+swapon /dev/sda2
 
 echo 'Зеркала для загрузки.'
 cat > /etc/pacman.d/mirrorlist <<EOF
